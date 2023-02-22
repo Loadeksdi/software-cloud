@@ -2,8 +2,9 @@ const Koa = require('koa');
 const router = require('@koa/router')();
 const { koaBody } = require('koa-body');
 const postgres = require('postgres');
+require('dotenv').config();
 
-const sql = postgres("postgres://todoapp:todoapp@backend_pgsql_1:5432/todoapp", {})
+const sql = postgres(process.env.POSTGRES_URL, {})
 const app = new Koa();
 
 app.use(router.routes())

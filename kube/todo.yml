@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-back
+spec:
+  selector:
+    app: todo-back
+  ports:
+    - port: 80
+      targetPort: 3000
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-back
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-back
+  template:
+    metadata:
+      labels:
+        app: todo-back
+    spec:
+      containers:
+        - name: todo-back
+          image: loadeksdee/todo-back:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: POSTGRES_URL
+              value: postgres://root:password@postgres.default.svc.cluster.local:5432/todoapp
+          imagePullPolicy: Always
