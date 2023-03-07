@@ -10,7 +10,7 @@ Then you need to start minikube:
 minikube start
 ```
 
-And then to start all the apps:
+And then to apply Kubernetes configuration:
 
 ```bash
 kubectl apply -f kube
