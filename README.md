@@ -16,11 +16,16 @@ And then to start all the apps:
 kubectl apply -f kube
 ```
 
-To access the back (if it is declared as LoadBalancer service):
+To run the projects locally:
     
 ```bash
-minikube service todo-back --url
+minikube addons enable ingress
+minikube tunnel
 ```
+
+Finally, you can access the project on your localhost.
+
+## Utils
 
 If you need to delete every resource (does not include the persistent volumes):
 
