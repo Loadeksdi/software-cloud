@@ -21,4 +21,3 @@ spec:
           env:
             - name: POSTGRES_URL
               value: postgres://postgres:postgres@postgres.default.svc.cluster.local:5432/todoapp
-          imagePullPolicy: Always
