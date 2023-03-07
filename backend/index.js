@@ -11,7 +11,7 @@ app.use(router.routes())
 app.use(router.allowedMethods())
 
 router.get('/api/todos', async (ctx, next) => {
-    const todos = await sql`select * from todos`
+    const todos = await sql`select * from todos order by id`
     console.log(`Todos found: ${todos}`);
     ctx.body = todos;
 }).post('/api/todos', koaBody(), async (ctx, next) => {
