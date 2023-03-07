@@ -15,6 +15,7 @@ spec:
       containers:
         - name: todo-back
           image: loadeksdee/todo-back:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
           env:

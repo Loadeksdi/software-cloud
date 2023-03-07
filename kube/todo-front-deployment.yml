@@ -15,6 +15,7 @@ spec:
       containers:
         - name: todo-front
           image: loadeksdee/todo-front:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
           imagePullPolicy: Always
