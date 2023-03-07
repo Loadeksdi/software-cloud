@@ -34,5 +34,4 @@ router.get('/api/todos', async (ctx, next) => {
 });
 
 console.log('Server listening on port 3000');
-console.log(process.env.POSTGRES_URL);
 app.listen(3000)
